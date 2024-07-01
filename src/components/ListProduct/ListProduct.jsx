@@ -5,10 +5,9 @@ import cross_icon from '../../assets/cross_icon.png';
 
 //Fetch and Display Info
 const ListProduct = () => {
-  const url = "https://gala-backend-nf24.onrender.com";
   const [allproducts, setAllProducts] = useState([]);
   const fetchInfo = async () => {
-    await fetch(url+'/allproducts')
+    await fetch('https://gala-backend-nf24.onrender.com/allproducts')
     .then((res)=>res.json())
     .then((data)=>{setAllProducts(data)});
   }
@@ -20,7 +19,7 @@ const ListProduct = () => {
 
   //Remove Product
   const remove_product = async (id) => {
-    await fetch(url+'/removeproduct', {
+    await fetch('https://gala-backend-nf24.onrender.com/removeproduct', {
       method: 'POST',
       headers:{
         Accept:'application/json',
